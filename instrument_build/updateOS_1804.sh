@@ -160,7 +160,6 @@ mysql-common \
 netpbm \
 pmount \
 po-debconf \
-postfix \
 python-all \
 python-all-dev \
 python-h5py \
