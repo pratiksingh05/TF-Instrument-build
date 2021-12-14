@@ -1,8 +1,6 @@
 source "amazon-ebs" "aws" {
-  access_key    = ""
-  secret_key    = ""
   subnet_id     = "subnet-0bfc0d4034e3e3fff"
-  ami_name      = "Jenkins-Gold-Slave-Image-jdk8-2.6"
+  ami_name      = "Jenkins-Gold-Instrument-build"
   instance_type = "t2.large"
   region        = "us-east-1"
   launch_block_device_mappings {
@@ -37,12 +35,8 @@ build {
   ]
 
   provisioner "file" {
-    source = "./install_essentials.sh"
-    destination = "/tmp/install_essentials.sh"
-  }
-  provisioner "file" {
-    source = "./oracle-jdk.sh"
-    destination = "/tmp/oracle-jdk.sh"
+    source = "./updateOS_1804.sh"
+    destination = "/tmp/updateOS_1804.sh"
   }
 
   # Update Linux instance to latest packages
@@ -54,10 +48,8 @@ build {
        "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDimPnfTY+41Rbz4MSfF4JvsziK+6aAmQ4WX0QVBkWcq8YIhHMHaM/cv23Ip76tiEWopATVC8XW2k19jP3H/A2BDF4ZwPhDTLrew/9aPR14eQl6Wvezc9/pQ7vmAs9q+NhroXY8ihRJSJvAosJKlzYbJEOhQrsq4CtCfamI3RRj8a5dQH4nAtGvDUpurnPlPX1gBRyuIPFCnYrZZIo1KU86NuxmuigGLavVone0bKZRNGIbS8NwJWPfkyjsmnPgDmOoc1tfMkW3RUNkQiBQ6MwK3T2eirbF/GPGfP8IsQWTsLXLNysngNH1XLBF9pxpyMCY9NTQAiOymzqs07ZdN0RT imported-openssh-key' >> /home/ubuntu/.ssh/authorized_keys",
       "chmod 700 /home/ubuntu/.ssh",
       "chmod 600 /home/ubuntu/.ssh/authorized_keys",
-      "chmod u+x /tmp/install_essentials.sh",
-      "sudo bash /tmp/install_essentials.sh",
-      "chmod u+x /tmp/oracle-jdk.sh",
-      "sudo bash /tmp/oracle-jdk.sh"
+      "chmod u+x /tmp/updateOS_1804.sh",
+      "sudo bash /tmp/updateOS_1804.sh"
       ]
   }
 }
