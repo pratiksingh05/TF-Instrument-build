@@ -1,6 +1,6 @@
 source "amazon-ebs" "aws" {
   subnet_id     = "subnet-0bfc0d4034e3e3fff"
-  ami_name      = "Jenkins-Gold-Instrument-build"
+  ami_name      = "Jenkins-Gold-Instrument-build-v1.0"
   instance_type = "t2.large"
   region        = "us-east-1"
   launch_block_device_mappings {
