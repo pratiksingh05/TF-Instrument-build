@@ -83,12 +83,6 @@ gobjc \
 gobjc++ \
 gobjc++-5 \
 gobjc-5 \
-gridengine-client \
-gridengine-common \
-gridengine-drmaa1.0 \
-gridengine-exec \
-gridengine-master \
-gridengine-qmon \
 imagemagick \
 imagemagick-6.q16 \
 imagemagick-common \
