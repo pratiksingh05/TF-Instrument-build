@@ -31,7 +31,6 @@ libatlas-base-dev \
 flex \
 libssl1.0-dev \
 libwxgtk3.0-dev \
-smartmontools \
 nfs-kernel-server \
 freeipmi-tools \
 xinput-calibrator \
